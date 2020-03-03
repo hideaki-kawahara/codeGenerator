@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-  end
 
   def new
   end

@@ -1,5 +1,6 @@
 <% provide(:title, "Twitter連携") %>
 <h1>Twitter連携</h1>
+<p><%= gravatar_for @user %></p>
 <p><%= "name:" + @user[:nickname]%></p>
 <p><%= "screen_name:" + @user[:name]%></p>
 <p><%= "image_url:" + @user[:image_url]%></p>
