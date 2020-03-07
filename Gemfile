@@ -22,6 +22,9 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'dotenv-rails'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -71,6 +74,7 @@ end
 group :production do
   gem 'pg', '>= 0.20.0'
   gem 'rails_12factor'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

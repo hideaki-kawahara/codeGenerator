@@ -5,6 +5,7 @@ class Codelist < ApplicationRecord
   validates :content, presence: true, length: { maximum: 2048 }
   validates :url, presence: true, length: { maximum: 2048 }
   validates :password_digest, presence: true, length: { maximum: 256 }
+  validates :title, presence: true, length: { maximum: 256 }
 
   class << self
     # 渡された文字列のハッシュ値を返す
