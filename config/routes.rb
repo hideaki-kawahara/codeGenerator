@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/login', to: 'homes#login'
   resources :users
+  resources :codelists
 end

@@ -1,0 +1,2 @@
+module CodelistsHelper
+end

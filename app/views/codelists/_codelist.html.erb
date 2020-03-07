@@ -1,0 +1,7 @@
+<li id="codelist-<%= codelist.id %>">
+  <span class="user"><%= link_to codelist.user.name, codelist.user %></span>
+  <span class="content"><%= codelist.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(codelist.created_at) %> ago.
+  </span>
+</li>
