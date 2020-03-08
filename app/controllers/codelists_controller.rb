@@ -9,6 +9,20 @@ class CodelistsController < ApplicationController
     @codelist = Codelist.find(params[:id])
   end
 
+  def edit
+    @codelist = Codelist.find(params[:id])
+  end
+
+  def update
+    @codelist = Codelist.find(params[:id])
+    if @codelist.update_attributes(codelist_params)
+      flash[:success] = "アイテム更新完了"
+      redirect_to @codelist
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @codelist.destroy
     flash[:success] = "アイテムを削除しました。"
@@ -20,5 +34,9 @@ class CodelistsController < ApplicationController
     def correct_user
       @codelist = current_user.codelists.find_by(id: params[:id])
       redirect_to root_url if @codelist.nil?
+    end
+
+    def codelist_params
+      params.require(:codelist).permit(:title, :content, :url)
     end
 end

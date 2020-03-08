@@ -1,0 +1,22 @@
+<% provide(:title, "アイテム編集") %>
+<h1>アイテム編集</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@codelist) do |f| %>
+      <%= render 'shared/error_messages', object: f.object  %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :content %>
+      <%= f.text_area :content, class: 'form-control', size: "100x10" %>
+
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

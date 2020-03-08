@@ -4,8 +4,9 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading"><%= @codelist.title %></h4>
-    <p><%= @codelist.content.html_safe %></p>
-    <p><a href="#" class="btn btn-primary" role="button">アイテム編集</a>
+    <p><%= safe_join(@codelist.content.split("\n"),tag(:br)) %></p>
+    <p>関連URL：<%= link_to @codelist.url, @codelist.url, target: :_blank, rel: 'noopener' %></p>
+    <p><%= link_to "アイテム編集", edit_codelist_path(@codelist), :class => "btn btn-primary" %>
     <%= link_to "アイテム削除", @codelist, :class => "btn btn-danger", method: :delete,
                                        data: { confirm: "このアイテムを削除してよろしいですか？" } %></p>
   </div>
