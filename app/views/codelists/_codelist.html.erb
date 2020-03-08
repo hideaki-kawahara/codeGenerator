@@ -1,6 +1,6 @@
 <li id="codelist-<%= codelist.id %>">
   <span class="user"><%= link_to codelist.user.name, codelist.user %></span>
-  <span class="title"><%= image_tag codelist.picture.url if codelist.picture? %></span>
+  <span class="title"><%= image_tag codelist.picture.url , :size => "108x154" if codelist.picture? %></span>
   <span class="title"><%= codelist.title %></span>
   <span class="content"><%= codelist.content.html_safe %></span>
   <span class="timestamp">
