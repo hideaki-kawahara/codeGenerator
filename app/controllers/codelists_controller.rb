@@ -1,4 +1,5 @@
 class CodelistsController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: :destroy
 
   def index
@@ -31,7 +32,15 @@ class CodelistsController < ApplicationController
 
   private
 
-    def correct_user
+  # ログイン済みユーザーかどうか確認
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
       @codelist = current_user.codelists.find_by(id: params[:id])
       redirect_to root_url if @codelist.nil?
     end
