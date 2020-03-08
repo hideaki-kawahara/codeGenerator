@@ -1,8 +1,10 @@
 <% provide(:title, 'Codelists') %>
     <% if @codelists.any? %>
       <h3>Codelists (<%= @codelists.count %>)</h3>
-      <ol class="codelists">
-        <%= render @codelists %>
-      </ol>
+      <div class="row">
+          <div class="col-md-3">
+            <%= render @codelists %>
+          </div>
+      </div>
       <%= will_paginate @codelists %>
     <% end %>
