@@ -1,8 +1,10 @@
-<div class="thumbnail">
-  <%= link_to codelist_path(codelist) do %>
-  <%= image_tag(codelist.picture.url, :size => "108x154") if codelist.picture? %>
-  <div class="caption">
-    <%= codelist.title %>
+<div class="col-sm-6 col-md-2">
+  <div class="thumbnail">
+    <%= link_to codelist_path(codelist) do %>
+    <%= image_tag(codelist.picture.url) if codelist.picture? %>
+    <div class="caption">
+      <%= codelist.title %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

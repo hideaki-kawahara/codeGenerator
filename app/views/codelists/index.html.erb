@@ -2,9 +2,7 @@
 <% if @codelists.any? %>
   <h3>Codelists (<%= @codelists.count %>)</h3>
   <div class="row">
-      <div class="col-md-3">
-        <%= render @codelists %>
-      </div>
+    <%= render @codelists %>
   </div>
   <%= will_paginate @codelists %>
 <% end %>
