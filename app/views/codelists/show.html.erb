@@ -5,6 +5,9 @@
   <div class="media-body">
     <h4 class="media-heading"><%= @codelist.title %></h4>
     <p><%= @codelist.content.html_safe %></p>
+    <p><a href="#" class="btn btn-primary" role="button">アイテム編集</a>
+    <%= link_to "アイテム削除", @codelist, :class => "btn btn-danger", method: :delete,
+                                       data: { confirm: "このアイテムを削除してよろしいですか？" } %></p>
   </div>
 </div>
 <br/>
