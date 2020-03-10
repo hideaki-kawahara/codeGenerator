@@ -3,11 +3,11 @@
 one:
   content: MyText
   url: MyText
-  password_digest: MyString
+  hint: MyString
   user: one
 
 two:
   content: MyText
   url: MyText
-  password_digest: MyString
+  hint: MyString
   user: two

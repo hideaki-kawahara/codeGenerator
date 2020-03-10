@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_075507) do
+ActiveRecord::Schema.define(version: 2020_03_10_152737) do
 
   create_table "codelists", force: :cascade do |t|
     t.text "content", null: false
     t.text "url", null: false
-    t.string "password_digest", null: false
+    t.string "hint", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
