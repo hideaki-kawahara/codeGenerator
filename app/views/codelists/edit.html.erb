@@ -15,6 +15,10 @@
       <%= f.label :url %>
       <%= f.text_field :url, class: 'form-control' %>
 
+  <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
