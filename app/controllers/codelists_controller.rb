@@ -10,6 +10,20 @@ class CodelistsController < ApplicationController
     @codelist = Codelist.find(params[:id])
   end
 
+  def new
+    @codelist = Codelist.new
+  end
+
+  def create
+    @codelist = current_user.codelists.build(codelist_params)
+    if @codelist.save
+      flash[:success] = "アイテムの登録が完了しました。"
+      redirect_to @codelist
+    else
+      render 'new'
+    end
+  end
+
   def edit
     @codelist = Codelist.find(params[:id])
   end
@@ -17,7 +31,7 @@ class CodelistsController < ApplicationController
   def update
     @codelist = Codelist.find(params[:id])
     if @codelist.update_attributes(codelist_params)
-      flash[:success] = "アイテム更新完了"
+      flash[:success] = "アイテムの更新が完了しました。"
       redirect_to @codelist
     else
       render 'edit'
@@ -46,6 +60,6 @@ class CodelistsController < ApplicationController
     end
 
     def codelist_params
-      params.require(:codelist).permit(:title, :content, :url, :picture)
+      params.require(:codelist).permit(:title, :content, :url,:password_digest, :picture)
     end
 end
