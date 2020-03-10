@@ -5,7 +5,8 @@ class Codelist < ApplicationRecord
   before_create { self.hint = Codelist.digest(hint) }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 2048 }
-  validates :url, presence: true, length: { maximum: 2048 }
+  validates :url, presence: true, length: { maximum: 2048 }, format: /\A#{URI::regexp(%w(http https))}\z/
+
   validates :hint, presence: true, length: { maximum: 100 }
   validates :title, presence: true, length: { maximum: 256 }
 
