@@ -1,0 +1,9 @@
+<% provide(:title, 'Codelists') %>
+<%= link_to "アイテム登録", new_code_list_path, :class => "btn btn-primary" %>
+<% if @code_lists.any? %>
+  <h3>Codelists (<%= @code_lists.count %>)</h3>
+  <div class="row">
+    <%= render @code_lists %>
+  </div>
+  <%= will_paginate @code_lists %>
+<% end %>

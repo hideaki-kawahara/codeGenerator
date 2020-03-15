@@ -1,0 +1,10 @@
+<div class="col-sm-6 col-md-2">
+  <div class="thumbnail">
+    <%= link_to code_list_path(code_list) do %>
+    <%= image_tag(code_list.picture.url) if code_list.picture? %>
+    <div class="caption">
+      <%= code_list.title %>
+    </div>
+    <% end %>
+  </div>
+</div>

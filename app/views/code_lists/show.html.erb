@@ -1,0 +1,14 @@
+<div class="media">
+  <div class="media-left media-middle">
+    <%= image_tag(@code_list.picture.url, :style => 'max-height: 320px; max-width: 220px', :class => "media-object") if @code_list.picture? %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= @code_list.title %></h4>
+    <p><%= safe_join(@code_list.content.split("\n"),tag(:br)) %></p>
+    <p>関連URL：<%= link_to @code_list.url, @code_list.url, target: :_blank, rel: 'noopener' %></p>
+    <p><%= link_to "アイテム編集", edit_code_list_path(@code_list), :class => "btn btn-primary" %>
+    <%= link_to "アイテム削除", @code_list, :class => "btn btn-danger", method: :delete,
+                                       data: { confirm: "このアイテムを削除してよろしいですか？" } %></p>
+  </div>
+</div>
+<br/>

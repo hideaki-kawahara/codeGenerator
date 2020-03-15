@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_152737) do
+ActiveRecord::Schema.define(version: 2020_03_07_024516) do
 
-  create_table "codelists", force: :cascade do |t|
+  create_table "code_lists", force: :cascade do |t|
+    t.string "title", null: false
     t.text "content", null: false
-    t.text "url", null: false
+    t.string "url", null: false
     t.string "hint", null: false
+    t.string "picture", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title", null: false
-    t.string "picture", null: false
-    t.index ["user_id", "created_at"], name: "index_codelists_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_codelists_on_user_id"
+    t.index ["user_id", "created_at"], name: "index_code_lists_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_code_lists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

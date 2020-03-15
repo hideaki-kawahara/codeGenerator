@@ -9,12 +9,12 @@ User.create!(
   updated_at: Time.zone.now,
 )
 
-Codelist.create!(
+CodeList.create!(
   title:            "迷惑メールにされないメール設定方法 G Suite編",
   content:          "Gmailで表示される「？」マークは迷惑メールとして判定される前段階の状態、このまま放置しておくと迷惑メールとしてメールが届かなくなります。この状態にならないため早めの対策が必要です。\nこれらの技術はSPFとDKIMによって行われます。SPFはメール送信する場所の正当性、DKIMは送信するメールサーバーの正当性を検証する技術になります。",
   picture:          open("#{Rails.root}/db/images/a.jpg"),
   url:              "https://bright-system.booth.pm/items/1475698",
-  hint:             Codelist.digest('gishohaku2019'),
+  hint:             CodeList.digest('gishohaku2019'),
   user_id:          1,
   created_at: Time.zone.now,
   updated_at: Time.zone.now,

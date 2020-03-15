@@ -1,8 +1,8 @@
-class Codelist < ApplicationRecord
+class CodeList < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
-  before_create { self.hint = Codelist.digest(hint) }
+  before_create { self.hint = CodeList.digest(hint) }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 2048 }
   validates :url, presence: true, length: { maximum: 2048 }, format: /\A#{URI::regexp(%w(http https))}\z/
