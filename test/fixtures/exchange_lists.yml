@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hint: MyString
+  use_date: 2020-03-16
+  user: one
+  code_list: one
+
+two:
+  hint: MyString
+  use_date: 2020-03-16
+  user: two
+  code_list: two

@@ -14,8 +14,15 @@ CodeList.create!(
   content:          "Gmailで表示される「？」マークは迷惑メールとして判定される前段階の状態、このまま放置しておくと迷惑メールとしてメールが届かなくなります。この状態にならないため早めの対策が必要です。\nこれらの技術はSPFとDKIMによって行われます。SPFはメール送信する場所の正当性、DKIMは送信するメールサーバーの正当性を検証する技術になります。",
   picture:          open("#{Rails.root}/db/images/a.jpg"),
   url:              "https://bright-system.booth.pm/items/1475698",
-  hint:             CodeList.digest('gishohaku2019'),
+  password_digest:  'gishohaku2019',
   user_id:          1,
+  created_at: Time.zone.now,
+  updated_at: Time.zone.now,
+)
+
+ExchangeList.create!(
+  user_id:          1,
+  code_list_id:     1,
   created_at: Time.zone.now,
   updated_at: Time.zone.now,
 )

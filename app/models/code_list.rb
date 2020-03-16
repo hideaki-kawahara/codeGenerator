@@ -1,13 +1,14 @@
 class CodeList < ApplicationRecord
   belongs_to :user
+  has_secure_password
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
-  before_create { self.hint = CodeList.digest(hint) }
+  before_create { self.password_digest = CodeList.digest(password_digest) }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 2048 }
   validates :url, presence: true, length: { maximum: 2048 }, format: /\A#{URI::regexp(%w(http https))}\z/
 
-  validates :hint, presence: true, length: { maximum: 100 }
+  validates :password_digest, presence: true, length: { maximum: 100 }
   validates :title, presence: true, length: { maximum: 256 }
 
   class << self

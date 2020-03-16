@@ -60,6 +60,6 @@ class CodeListsController < ApplicationController
     end
 
     def code_list_params
-      params.require(:code_list).permit(:title, :content, :url,:hint, :picture)
+      params.require(:code_list).permit(:title, :content, :url,:password_digest, :picture)
     end
 end
