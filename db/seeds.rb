@@ -20,9 +20,3 @@ CodeList.create!(
   updated_at: Time.zone.now,
 )
 
-ExchangeList.create!(
-  user_id:          1,
-  code_list_id:     1,
-  created_at: Time.zone.now,
-  updated_at: Time.zone.now,
-)

@@ -8,6 +8,7 @@ class CodeListsController < ApplicationController
 
   def show
     @code_list = CodeList.find(params[:id])
+    @exchange_list = current_user.exchange_lists.build if logged_in?
   end
 
   def new

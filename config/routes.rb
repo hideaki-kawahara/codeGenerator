@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/login', to: 'homes#login'
   resources :users
   resources :code_lists
+  resources :exchange_lists
 end

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :code_lists, dependent: :destroy
+  has_many :exchange_lists, dependent: :destroy
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]
