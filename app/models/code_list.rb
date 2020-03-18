@@ -1,5 +1,6 @@
 class CodeList < ApplicationRecord
   belongs_to :user
+  has_many :exchange_lists, dependent: :destroy
   has_secure_password
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader

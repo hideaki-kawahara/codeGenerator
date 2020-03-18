@@ -1,4 +1,4 @@
 <% provide(:title, 'Codelists') %>
-<%= @exchange_list.user_id %><br/>
-<%= @exchange_list.code_list_id %><br/>
 <%= @exchange_list.token %><br/>
+<%= image_tag "https://chart.apis.google.com/chart?chs=200x200&cht=qr&chl=#{@exchange_list.token}" , :size =>'200x200'%>
+
