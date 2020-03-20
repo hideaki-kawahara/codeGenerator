@@ -13,8 +13,6 @@ class CodeListsController < ApplicationController
       if @exchange_list.nil?
         @exchange_list = current_user.exchange_lists.build
       end
-    else
-      @exchange_list = current_user.exchange_lists.build
     end
   end
 

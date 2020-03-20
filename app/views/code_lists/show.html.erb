@@ -9,17 +9,20 @@
     <p><%= link_to "アイテム編集", edit_code_list_path(@code_list), :class => "btn btn-primary" %>
     <%= link_to "アイテム削除", @code_list, :class => "btn btn-danger", method: :delete,
                                        data: { confirm: "このアイテムを削除してよろしいですか？" } %></p>
-    <% if @exchange_list.token.blank? %>
-      <%= form_for(@exchange_list) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
-          <%= f.text_field :token, placeholder: "input token..." %>
-        </div>
-        <%= f.hidden_field :code_list_id, :value => @code_list.id %>
-        <%= f.submit "Post", class: "btn btn-primary" %>
+
+    <% unless @exchange_list.nil? %>
+      <% if @exchange_list.token.blank? %>
+        <%= form_for(@exchange_list) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.text_field :token, placeholder: "input token..." %>
+          </div>
+          <%= f.hidden_field :code_list_id, :value => @code_list.id %>
+          <%= f.submit "Post", class: "btn btn-primary" %>
+        <% end %>
+      <% else %>
+        <%= image_tag "https://chart.apis.google.com/chart?chs=200x200&cht=qr&chl=#{@exchange_list.token}" , :size =>'200x200'%>
       <% end %>
-    <% else %>
-      <%= image_tag "https://chart.apis.google.com/chart?chs=200x200&cht=qr&chl=#{@exchange_list.token}" , :size =>'200x200'%>
     <% end %>
   </div>
 </div>
